@@ -3,7 +3,13 @@
 
   become: yes
   tasks:
+    - name: packages | ensure apt list dir exists
+      file:
+        path: /var/lib/apt/lists/
+        state: directory
+        mode: 0755
     - name: update apt packages
       apt:
         upgrade: yes
         update_cache: yes
+
