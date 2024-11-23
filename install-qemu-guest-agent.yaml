@@ -6,9 +6,6 @@
   tasks:
     - name: update apt cache
       command: apt update
-
-    - name: add universe repo
-      command: add-apt-repository universe
       
     - name: update apt cache
       command: apt update
