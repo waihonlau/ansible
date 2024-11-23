@@ -2,7 +2,7 @@
 - hosts: all
 
   become: yes
-  become: uroot
+  become_user: uroot
   tasks:
     - name: update apt packages
       apt:
