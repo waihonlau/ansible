@@ -1,0 +1,21 @@
+---
+- name: Check, install updates, and reboot Fedora server
+  hosts: all
+  become: yes  # Use sudo to run commands as root
+  tasks:
+    - name: Check for available updates
+      dnf:
+        update_cache: yes  # Refresh the package cache
+        state: latest  # Ensure the latest version is installed
+
+    - name: Install updates
+      dnf:
+        name: '*'
+        state: latest  # Install the latest version of all packages
+      when: ansible_facts.packages is changed  # Only install updates if necessary
+
+    - name: Reboot the server if updates were installed
+      reboot:
+        reboot_timeout: 600  # Wait up to 10 minutes for the system to reboot
+        test_command: uptime  # Run a command to check if the system is back online
+      when: ansible_facts.packages is changed  # Only reboot if updates were installed
