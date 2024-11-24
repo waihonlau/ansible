@@ -1,0 +1,15 @@
+---
+- name: Install qemu-guest-agent on Fedora server
+  hosts: all
+  become: yes  # Use sudo to run commands as root
+  tasks:
+    - name: Install qemu-guest-agent package
+      package:
+        name: qemu-guest-agent
+        state: present
+
+    - name: Ensure qemu-guest-agent service is enabled and started
+      service:
+        name: qemu-guest-agent
+        state: started
+        enabled: yes
