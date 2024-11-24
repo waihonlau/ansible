@@ -12,10 +12,11 @@
       dnf:
         name: '*'
         state: latest  # Install the latest version of all packages
-      when: ansible_facts.packages is changed  # Only install updates if necessary
+      register: result  # Register the result of the update task to check if there were any changes
+      changed_when: result.changed  # Only consider it changed if updates were actually applied
 
     - name: Reboot the server if updates were installed
       reboot:
         reboot_timeout: 600  # Wait up to 10 minutes for the system to reboot
         test_command: uptime  # Run a command to check if the system is back online
-      when: ansible_facts.packages is changed  # Only reboot if updates were installed
+      when: result.changed  # Only reboot if updates were installed
