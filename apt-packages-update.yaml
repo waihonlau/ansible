@@ -4,10 +4,6 @@
   become: yes
   become_user: uroot
   tasks:
-    - name: update apt packages
-      apt:
-        upgrade: yes
-        update_cache: yes
     - name: Upgrade all packages
       apt:
         upgrade: dist
