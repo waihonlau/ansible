@@ -8,4 +8,6 @@
       apt:
         upgrade: yes
         update_cache: yes
-
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
