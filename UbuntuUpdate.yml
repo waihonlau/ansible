@@ -1,0 +1,10 @@
+name: Update packages on Ubuntu servers
+hosts: ubuntu_servers
+become: yes
+tasks:
+name: Update apt cache
+apt:
+update_cache: yes
+name: Upgrade all packages
+apt:
+upgrade: dist
