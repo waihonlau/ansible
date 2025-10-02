@@ -2,7 +2,7 @@
 - hosts: all
 
   become: yes
-  become_user: semaphore
+  become_user: root
   tasks:
     - name: update apt packages
       apt:
