@@ -1,7 +1,7 @@
 ---
 - hosts: all
-  remote_user: ubuntu
-  become: true
+  become: yes
+  become_user: root
   tasks:
     - name: install dependencies
       apt:
