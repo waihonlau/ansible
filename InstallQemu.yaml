@@ -1,6 +1,5 @@
 ---
 - name: Install QEMU on Ubuntu hosts
-  hosts: your_ubuntu_servers
   become: yes # Use sudo
   tasks:
     - name: Update apt cache
