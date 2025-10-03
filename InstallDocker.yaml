@@ -6,7 +6,7 @@
   tasks:
     - name: Add Docker repository
       apt_repository:
-        repo: deb [docker.com/repo]
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
         state: present
 
     - name: Install Docker
