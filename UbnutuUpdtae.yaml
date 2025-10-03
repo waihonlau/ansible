@@ -2,6 +2,7 @@
 - hosts: all
   gather_facts: yes
   become: yes
+  become_user: root
 
   tasks:
     - name: Perform a dist-upgrade.
