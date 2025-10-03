@@ -1,7 +1,9 @@
-name: Install Docker
-hosts: ubuntu
-become: true
-tasks:
+---
+- name: Install Docker
+  hosts: all
+  become: yes
+  become_user: root
+  tasks:
 
 
     name: Add Docker repository
