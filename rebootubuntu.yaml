@@ -1,4 +1,10 @@
-- name: Reboot a Linux machine 
+---
+- name: Linux Reboot Demo
   hosts: all
-  reboot:
-    reboot_timeout: 1800
+  gather_facts: no
+  become: true
+ 
+  tasks:
+    - name: Reboot the machine (Wait for 5 min)
+      reboot:
+        reboot_timeout: 300
