@@ -1,7 +1,7 @@
 ---
 - name: Install QEMU on Ubuntu
   hosts: all
-  become: true
+  become: yes
   become_user: root
   tasks:
     - name: Update apt package index
