@@ -6,17 +6,17 @@
   tasks:
     - name: Add Docker repository
       apt_repository:
-      repo: deb [docker.com/repo]
-      state: present
+        repo: deb [docker.com/repo]
+        state: present
 
     - name: Install Docker
       apt:
         name: docker-ce
         state: present
-      update_cache: yes
+        update_cache: yes
 
     - name: Start Docker service
       service:
-       name: docker
-      state: started
-      enabled: yes
+        name: docker
+        state: started
+        enabled: yes
