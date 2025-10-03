@@ -4,21 +4,19 @@
   become: yes
   become_user: root
   tasks:
-
-
-    name: Add Docker repository
-    apt_repository:
+    - name: Add Docker repository
+      apt_repository:
       repo: deb [docker.com/repo]
       state: present
 
-    name: Install Docker
-    apt:
-      name: docker-ce
-      state: present
+    - name: Install Docker
+      apt:
+        name: docker-ce
+        state: present
       update_cache: yes
 
-    name: Start Docker service
-    service:
-      name: docker
+    - name: Start Docker service
+      service:
+       name: docker
       state: started
       enabled: yes
