@@ -14,10 +14,9 @@
         - gnupg
         - lsb-release
         
-    - name: Add Docker GPG key
-      apt_key:
+    - name: docker | repo | apt key
+      ansible.builtin.get_url:
         url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
         dest: /etc/apt/trusted.gpg.d/
         
     - name: Add Docker APT repository
