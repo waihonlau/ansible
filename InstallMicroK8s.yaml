@@ -9,8 +9,7 @@
         upgrade: yes
         update_cache: yes
     - name: Update apt and install prerequisites
-      apt:
+      snap:
         name:
           - microk8s
-        state: latest
-        update_cache: yes
+        classic: yes
