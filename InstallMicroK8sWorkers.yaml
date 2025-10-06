@@ -5,4 +5,4 @@
   become_user: root
   tasks:
     - name: "Run Worker commands"
-      command: "sudo microk8s join 192.168.110.117:25000/b4c5baf4279a1f7b1f52551aa24f6dde/86dc4a578ea5 --worker"
+      command: "sudo microk8s join 192.168.110.183:25000/540490f08ad342a2fd507fa4e4c9e274/41a79cfbd8ef --worker"
